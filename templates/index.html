@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediksi Nominal Transaksi UPI</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background: white;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      label {
+        font-size: 14px;
+        color: #555;
+        float: left;
+        margin-top: 10px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+      button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .note {
+        font-size: 12px;
+        color: #888;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form Prediksi Transaksi</h2>
+      <form action="/predict" method="post">
+        <label>Jam Transaksi (0-23)</label>
+        <input type="number" name="hour" min="0" max="23" required />
+
+        <label>Hari dalam Minggu (0=Senin, 6=Minggu)</label>
+        <input type="number" name="weekday" min="0" max="6" required />
+
+        <label>Bulan (1-12)</label>
+        <input type="number" name="month" min="1" max="12" required />
+
+        <button type="submit">Prediksi</button>
+      </form>
+      <p class="note">Isi form lalu klik prediksi untuk melihat hasil</p>
+    </div>
+  </body>
+</html>
